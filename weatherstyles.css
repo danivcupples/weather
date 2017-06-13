@@ -1,0 +1,28 @@
+body {
+  font-family: sans-serif;
+  color: #fff;
+  background-color: #000;
+  font-size: 3em;
+}
+/*use skycons to add flair somewhere*/
+.sunny {
+  background-image: url(sunny sky);
+}
+.partly-cloudy {
+  background-image: url(sunny sky with clouds);
+  color: grey;
+}
+.cloudy {
+  background-image: url(cloudy sky);
+  color: #000;
+}
+.rain {
+  background-image: url(rain);
+}
+.storm {
+  background-image: url(storm);
+}
+.snow {
+  background-image: url(snow);
+  color: #000;
+}
