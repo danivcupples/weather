@@ -4,11 +4,9 @@ $(document).ready(function(){
   var url ="";
 
   //pull location
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function(position) {
-        //$("#location").html("latitude: " + position.coords.latitude + "<br>longitude: " + position.coords.longitude);
+    $.getJSON("http://ip-api.com/json", function(position) {
 
-        url = "http://api.openweathermap.org/data/2.5/weather?lat=" + position.coords.latitude + "&lon=" + position.coords.longitude +"&units=imperial&APPID=647139742b6f938ad3a17203330d6ea3";
+        url = "http://api.openweathermap.org/data/2.5/weather?lat=" + position.lat + "&lon=" + position.lon +"&units=imperial&APPID=647139742b6f938ad3a17203330d6ea3";
 
         console.log(url);
 
@@ -45,5 +43,4 @@ $(document).ready(function(){
     });
 
       });
-    }
 });
