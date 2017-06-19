@@ -4,9 +4,10 @@ $(document).ready(function(){
   var url ="";
 
   //pull location
-    $.getJSON("http://ip-api.com/json", function(position) {
+  if (navigator.geolocation) {
+       navigator.geolocation.getCurrentPosition(function(position) {
 
-        url = "http://api.openweathermap.org/data/2.5/weather?lat=" + position.lat + "&lon=" + position.lon +"&units=imperial&APPID=647139742b6f938ad3a17203330d6ea3";
+        url = "https://api.darksky.net/forecast/62f9dc2eac7a8f315e007e9fb0f3c3ae/" + position.coords.latitude +","+ position.coords.longitude;
 
         console.log(url);
 
@@ -20,19 +21,19 @@ $(document).ready(function(){
         $("#weather-icon").html("<img alt='current weather icon' class='img-responsive' src='"+ iconUrl + "'>")
 
         //assign #skies based on result of weather.main & weather.description
-        $("#skies").html(currentWeather.weather[0].description);
+        $("#skies").html(currentWeather.currently.summary);
 
         //convert main.temp to Fahrenheit and assign o #temp
-        $("#temp").html(Math.round((currentWeather.main.temp ) * 10)/10 + "&#176");
+        $("#temp").html(Math.round((currentWeather.currently.temperature ) * 10)/10 + "&#176");
 
         //assign #tempCelsius
-        $("#tempCelsius").html(Math.round(((currentWeather.main.temp - 32) * 5 / 9)*10)/10 + "&#176");
+        $("#tempCelsius").html(Math.round(((currentWeather.currently.temperature - 32) * 5 / 9)*10)/10 + "&#176");
 
         //assign #humidity
-        $("#humidity").html(currentWeather.main.humidity);
+        $("#humidity").html(currentWeather.currently.humidity);
 
         //assign name to #location
-        $("#location").html(currentWeather.name);
+        $("#location").html(position.city);
 
         //if, else if, else statements to assign classes that match weather
 
@@ -43,4 +44,5 @@ $(document).ready(function(){
     });
 
       });
+    }
 });
