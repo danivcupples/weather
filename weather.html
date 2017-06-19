@@ -9,15 +9,50 @@
 </head>
 <body>
 <div class="container-fluid">
-  <div class="row">
-    <div id="current-weather" class="col-lg-12">
-      <h1>The weather in <span id="location">wherever you are</span> is:</h1>
-      <p id="skies">fair to middling</p>
-      <p>and it is <span id="temp">some number of</span> degrees</p>
+  <div class="row text-center">
+    <div id="current-weather" class="col-lg-12 jumbotron">
+      <h1><span id="location">wherever you are</span></h1>
     </div>
   </div>
+
+  <div class="row text-center">
+    <div class="col-lg-12">
+      <p id="weather-icon"></p>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col-lg-12">
+      <p id="skies">fair to middling</p>
+    </div>
+  </div>
+
+  <div class="row text-center">
+    <div class="col-lg-12">
+      <div class="temperature">
+        <p id="temp">some number of degrees</p>
+        <p id="tempCelsius">celsius degrees</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row text-center">
+    <div class="col-lg-12">
+      <p><span id="humidity">humid</span>% humidity</p>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col-lg-12">
+      <button id="units">&#8451 / &#8457</button>
+    </div>
+  </div>
+
+  </div>
   <footer>
-    <h3>Made by Dani V Cupples</h3>
+    <div class="row text-center">
+      <div class="col-lg-12">
+        <h5>Made by Dani V Cupples</h5>
+      </div>
+    </div>
   </footer>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
