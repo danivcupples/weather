@@ -7,16 +7,21 @@ $(document).ready(function(){
   if (navigator.geolocation) {
        navigator.geolocation.getCurrentPosition(function(position) {
 
-        url = "https://api.darksky.net/forecast/62f9dc2eac7a8f315e007e9fb0f3c3ae/" + position.coords.latitude +","+ position.coords.longitude;
+         $.ajax({
+           dataType: "jsonp",
+           url: "https://api.darksky.net/forecast/62f9dc2eac7a8f315e007e9fb0f3c3ae/" + position.coords.latitude +","+ position.coords.longitude,
+           data: currentWeather,
+         });
+        //url = "https://api.darksky.net/forecast/62f9dc2eac7a8f315e007e9fb0f3c3ae/" + position.coords.latitude +","+ position.coords.longitude;
 
-        console.log(url);
+        //console.log(url);
 
         //make API request for weather at location from openweathermap
-        $.getJSON(url, function(currentWeather){
+        //$.getJSON(url, function(currentWeather){
 
         //assign icon to #weather-icon
-        var iconUrl = "http://openweathermap.org/img/w/" + currentWeather.weather[0].icon + ".png";
-        console.log(iconUrl);
+        //var iconUrl = "http://openweathermap.org/img/w/" + currentWeather.weather[0].icon + ".png";
+        //console.log(iconUrl);
 
         $("#weather-icon").html("<img alt='current weather icon' class='img-responsive' src='"+ iconUrl + "'>")
 
@@ -41,7 +46,7 @@ $(document).ready(function(){
         $("button").click(function(){
           $(".temperature p").toggle();
         })
-    });
+    //});
 
       });
     }
