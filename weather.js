@@ -6,39 +6,39 @@ $(document).ready(function(){
   //pull location
   if (navigator.geolocation) {
        navigator.geolocation.getCurrentPosition(function(position) {
+         console.log(position);
+        url = "https://api.wunderground.com/api/ca00d92ec76f700b/geolookup/q/" + position.coords.latitude +","+ position.coords.longitude +".json";
 
-         $.ajax({
-           dataType: "jsonp",
-           url: "https://api.darksky.net/forecast/62f9dc2eac7a8f315e007e9fb0f3c3ae/" + position.coords.latitude +","+ position.coords.longitude,
-           data: currentWeather,
-         });
-        //url = "https://api.darksky.net/forecast/62f9dc2eac7a8f315e007e9fb0f3c3ae/" + position.coords.latitude +","+ position.coords.longitude;
-
-        //console.log(url);
+        console.log(url);
 
         //make API request for weather at location from openweathermap
-        //$.getJSON(url, function(currentWeather){
+        $.getJSON(url, function(forecast){
 
-        //assign icon to #weather-icon
-        //var iconUrl = "http://openweathermap.org/img/w/" + currentWeather.weather[0].icon + ".png";
-        //console.log(iconUrl);
+          //assign name to #location
+          $("#location").html(forecast.location.city + ", " + forecast.location.state);
 
-        $("#weather-icon").html("<img alt='current weather icon' class='img-responsive' src='"+ iconUrl + "'>")
+        $.getJSON("https://api.wunderground.com/api/ca00d92ec76f700b/conditions/q/" + forecast.location.state + "/" + forecast.location.city + ".json", function(conditions){
+          console.log(conditions);
+          console.log(conditions.current_observation.weather);
+          //assign icon to #weather-icon
+          //var iconUrl = "http://openweathermap.org/img/w/" + currentWeather.weather[0].icon + ".png";
+          //console.log(iconUrl);
 
-        //assign #skies based on result of weather.main & weather.description
-        $("#skies").html(currentWeather.currently.summary);
+          $("#weather-icon").html("<img alt='current weather icon' class='img-responsive' src='"+ iconUrl + "'>")
 
-        //convert main.temp to Fahrenheit and assign o #temp
-        $("#temp").html(Math.round((currentWeather.currently.temperature ) * 10)/10 + "&#176");
+          //assign #skies based on result of weather.main & weather.description
+          $("#skies").html(conditions.current_observation.weather);
 
-        //assign #tempCelsius
-        $("#tempCelsius").html(Math.round(((currentWeather.currently.temperature - 32) * 5 / 9)*10)/10 + "&#176");
+          //convert main.temp to Fahrenheit and assign o #temp
+          $("#temp").html(Math.round((forecast.currently.temperature ) * 10)/10 + "&#176");
 
-        //assign #humidity
-        $("#humidity").html(currentWeather.currently.humidity);
+          //assign #tempCelsius
+          $("#tempCelsius").html(Math.round(((forecast.currently.temperature - 32) * 5 / 9)*10)/10 + "&#176");
 
-        //assign name to #location
-        $("#location").html(position.city);
+          //assign #humidity
+          $("#humidity").html(forecast.currently.humidity);
+        })
+
 
         //if, else if, else statements to assign classes that match weather
 
@@ -49,5 +49,6 @@ $(document).ready(function(){
     //});
 
       });
-    }
+    });
+  }
 });
