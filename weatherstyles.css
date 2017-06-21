@@ -1,16 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Marck+Script|Playfair+Display+SC:700|Source+Sans+Pro');
+
 body {
-  font-family: sans-serif;
-  color: #fff;
-  background-color: #000;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #000;
+  background-color: #cdcdcd;
   font-size: 3em;
   margin: 5%
 }
 .jumbotron{
-  background-color: #000;
+  background-color: #cdcdcd;
   margin: -1%;
 }
 h1 {
-  font-family: serif;
+  font-family: 'Playfair Display SC', serif;
+}
+.main-content {
+  font-size: 1.5em;
 }
 img {
   margin: auto;
@@ -22,12 +27,24 @@ img {
 #tempCelsius {
   display: none;
 }
+.humidity{
+  font-size: 0.75em;
+  font-style: italic;
+}
 button {
   color: #000;
+  font-family: 'Playfair Display SC', serif;
+  background-color: #FFF;
+  border: none;
   border-radius: 10px;
+  padding: 0.5% 1.5%;
   margin: 2%;
 }
 footer {
   margin: 2%;
 }
-/*use skycons to add flair somewhere*/
+footer h5 {
+  margin: 2%;
+  font-family: 'Marck Script', cursive;
+  font-size: 0.75em;
+}
