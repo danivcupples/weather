@@ -27,6 +27,9 @@ $(document).ready(function(){
 
           //assign #humidity
           $("#humidity").html(conditions.current_observation.relative_humidity);
+
+          $("body").addClass(conditions.current_observation.weather);
+
         })
 
         //toggle button: Fahrenheit to Celsius using formula
