@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Marck+Script|Playfair+Display+SC:700|Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Marck+Script|Anton|Source+Sans+Pro');
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
@@ -7,54 +7,12 @@ body {
   font-size: 3em;
   margin: 5%
 }
-.Clear{
-  background-image: url("https://static.pexels.com/photos/278927/pexels-photo-278927.jpeg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100%;
-  color: #000;
-}
-.Partly.Cloudy{
-  background-image: url("https://static.pexels.com/photos/97558/pexels-photo-97558.jpeg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100%;
-  color: #000;
-}
-.Mostly.Cloudy {
-  background-image: url("https://images.pexels.com/photos/414634/pexels-photo-414634.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100%;
-  color: #FFF;
-}
-.Rain {
-  background-image: url("https://static.pexels.com/photos/27629/pexels-photo-27629.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100%;
-  color: #FFF;
-}
-.Thunderstorm{
-  background-image: url("https://static.pexels.com/photos/28774/pexels-photo-28774.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100%;
-  color: #FFF;
-}
-.Snow{
-  background-image: url("https://images.pexels.com/photos/60561/winter-snow-nature-60561.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100%;
-  color: #000;
-}
 .header{
   margin: 1%;
 }
 h1 {
-  font-family: 'Playfair Display SC', serif;
-  font-size: 2em;
+  font-size: 3em;
+  font-weight: bold;
 }
 .main-content {
   font-size: 1.5em;
@@ -89,4 +47,47 @@ footer h5 {
   margin: 2%;
   font-family: 'Marck Script', cursive;
   font-size: 0.75em;
+}
+.Clear{
+  background-image: url("https://static.pexels.com/photos/278927/pexels-photo-278927.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #000;
+}
+.Partly.Cloudy{
+  background-image: url("https://static.pexels.com/photos/97558/pexels-photo-97558.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #000;
+}
+.Mostly.Cloudy {
+  background-image: url("https://images.pexels.com/photos/414634/pexels-photo-414634.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #FFF;
+  text-shadow: 3px 3px 2px #000;
+}
+.Rain {
+  background-image: url("https://static.pexels.com/photos/27629/pexels-photo-27629.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #FFF;
+}
+.Thunderstorm{
+  background-image: url("https://static.pexels.com/photos/28774/pexels-photo-28774.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #FFF;
+}
+.Snow{
+  background-image: url("https://images.pexels.com/photos/60561/winter-snow-nature-60561.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: #000;
 }
